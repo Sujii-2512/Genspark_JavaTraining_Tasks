@@ -1,0 +1,85 @@
+@startuml
+
+' Interfaces
+interface Flyable {
+    +fly()
+}
+interface Singable {
+    +sing()
+}
+interface Swimmable {
+    +swim()
+}
+interface FlyBehavior {
+    +performFly()
+}
+
+' Abstract class
+abstract class Bird {
+    -name : String
+    -color : String
+    -weight : int
+    -flyBehavior : FlyBehavior
+
+    +setName(name: String)
+    +setColor(color: String)
+    +setWeight(weight: int)
+    +getName(): String
+    +getColor(): String
+    +getWeight(): int
+    +setFlyBehavior(fb: FlyBehavior)
+    +performFly()
+}
+
+' Concrete classes
+class Parrot {
+    +fly()
+    +sing()
+}
+class Penguin {
+    +swim()
+}
+class Owl {
+    +fly()
+}
+class Duck {
+    +fly()
+    +swim()
+    +sing()
+}
+class Bat {
+    +fly()
+}
+
+class GlideFly {
+    +performFly()
+}
+class FlapFly {
+    +performFly()
+}
+
+' Inheritance
+Parrot --|> Bird
+Penguin --|> Bird
+Owl --|> Bird
+Duck --|> Bird
+Bat --|> Bird
+
+GlideFly ..|> FlyBehavior
+FlapFly ..|> FlyBehavior
+
+' Implements
+Parrot ..|> Flyable
+Parrot ..|> Singable
+
+Penguin ..|> Swimmable
+
+Owl ..|> Flyable
+
+Duck ..|> Flyable
+Duck ..|> Swimmable
+Duck ..|> Singable
+
+Bat ..|> Flyable
+
+@enduml
