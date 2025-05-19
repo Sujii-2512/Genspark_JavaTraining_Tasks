@@ -31,9 +31,9 @@ This repository contains a series of Java-based training tasks completed as part
 
 ## ⚙️ Project Setup
 
-To access and explore the tasks locally, follow these steps: 
-
 Each task is organized within its respective folder under the src directory.
+
+To access and explore the tasks locally, follow these steps: 
 
 ```bash
 git clone https://github.com/Sujii-2512/Genspark_JavaTraining_Tasks.git
